@@ -12,19 +12,15 @@ const slide_2 = document.querySelector("slide_2");
 slide.style.width =
   (slideWidth + slideMargin) * slideCount - slideMargin + "px";
 
-// const onclick = () => {
-//   current + 1;
-// };
+// function moveSlide(num) {
+//   slide.style.left = -num * 990 + "px";
+//   currentIdx = num;
+// }
+
 function moveSlide(num) {
-  slide.style.left = -num * 990 + "px";
+  slide.style.transform = `translate(${-num * 990}px)`;
   currentIdx = num;
 }
-
-// function moveSlide(num) {
-//   const iii = (slide.style.transform = `translaste(${-num * 990}px)`);
-//   currentIdx = num;
-//   console.log(iii);
-// }
 
 nextBtn.addEventListener("click", function () {
   moveSlide(currentIdx + 1);
@@ -37,15 +33,3 @@ prevBtn.addEventListener("click", function () {
   nextBtn.classList.remove("hidden");
   prevBtn.classList.add("hidden");
 });
-
-// slide_1.addEventListener("click", function () {
-//   moveSlide(currentIdx + 1);
-//   nextBtn.classList.add("hidden");
-//   prevBtn.classList.remove("hidden");
-// });
-
-// slide_2.addEventListener("click", function () {
-//   moveSlide(currentIdx - 1);
-//   nextBtn.classList.remove("hidden");
-//   prevBtn.classList.add("hidden");
-// });
